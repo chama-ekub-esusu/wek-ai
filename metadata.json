@@ -1,0 +1,6 @@
+{
+  "name": "Weka",
+  "description": "Chama Treasurer Assistant, Loan Ledger, and Multilingual AI Arbitrator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

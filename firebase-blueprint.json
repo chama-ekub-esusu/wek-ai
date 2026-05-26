@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "ChamaState": {
+      "title": "ChamaState",
+      "description": "Represents the full-state ledger for the Merry-Go-Round and Capital Lending Chama.",
+      "type": "object",
+      "properties": {
+        "members": {
+          "type": "array",
+          "description": "Active registered Chama members details and balances."
+        },
+        "cycles": {
+          "type": "array",
+          "description": "Financial contribution cycles scheduled for the group."
+        },
+        "contributions": {
+          "type": "array",
+          "description": "Reconciled monthly contributions index."
+        },
+        "loans": {
+          "type": "array",
+          "description": "Approved and pending debt allocations with automated status checks."
+        },
+        "mpesaTransactions": {
+          "type": "array",
+          "description": "Safaricom C2B payment log used for fuzzy reconciliation."
+        },
+        "bylaws": {
+          "type": "array",
+          "description": "Established bylaws rules authorized by the Chairperson."
+        },
+        "disputes": {
+          "type": "array",
+          "description": "Bylaw violations and active member ledger disputes."
+        },
+        "reminders": {
+          "type": "array",
+          "description": "Outbound recipient alert and notification history log."
+        }
+      },
+      "required": ["members", "cycles", "contributions", "loans", "mpesaTransactions", "bylaws", "disputes", "reminders"]
+    }
+  },
+  "firestore": {
+    "/system/chamaState": {
+      "schema": "ChamaState",
+      "description": "The master synchronizer document for active state tracking."
+    }
+  }
+}
